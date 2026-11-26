@@ -19,6 +19,7 @@ import {
   type ValueMetricOutput,
 } from "@/lib/events";
 import { simulate } from "@/lib/pricing";
+import { LiveScorecard, RecommendationPanel, type ResultTab } from "./RunOutcome";
 
 type Status = "idle" | "running" | "done" | "error";
 interface AgentState {
@@ -67,9 +68,10 @@ interface Props {
   setGoal: (g: string) => void;
   onRun: () => void;
   onStop: () => void;
+  onOpen: (tab: ResultTab) => void;
 }
 
-export default function AgentBoard({ events, running, mode, setMode, liveAvailable, goal, setGoal, onRun, onStop }: Props) {
+export default function AgentBoard({ events, running, mode, setMode, liveAvailable, goal, setGoal, onRun, onStop, onOpen }: Props) {
   const { states, phase } = useMemo(() => {
     const s = Object.fromEntries(AGENT_ORDER.map((a) => [a, { status: "idle", activity: "Waiting", skillLoaded: false }])) as Record<
       AgentId,
@@ -162,6 +164,8 @@ export default function AgentBoard({ events, running, mode, setMode, liveAvailab
         </div>
       </div>
 
+      <LiveScorecard events={events} running={running} />
+
       <div className="phases">
         {PHASES.map((p) => (
           <div key={p.n} className={`phase ${running && phase === p.n ? "active" : ""}`}>
@@ -198,6 +202,8 @@ export default function AgentBoard({ events, running, mode, setMode, liveAvailab
           </div>
         ))}
       </div>
+
+      <RecommendationPanel events={events} running={running} onOpen={onOpen} />
 
       {spans.length > 0 && (
         <div className="timeline-wrap">
