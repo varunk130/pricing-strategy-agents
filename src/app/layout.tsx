@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pricing Lab",
+  title: "Pricing Strategy Agents",
   description: "Case study: moving an enterprise SaaS business from seat to usage pricing with a team of agents and skills.",
 };
 

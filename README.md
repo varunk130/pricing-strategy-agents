@@ -1,4 +1,4 @@
-# Seat-to-Usage Pricing Lab
+# Pricing Strategy Agents
 
 **How an enterprise SaaS company moves from per-seat to usage pricing without losing customers. Eight agents, each with its own skill, research the market, design the new model, stress test it on every contract and write the decision memo.**
 
