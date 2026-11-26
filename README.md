@@ -72,7 +72,15 @@ A company with $100M ARR and the same mix would see roughly $39M a year.
 
 ## 6. How it works
 
-![Agent board](docs/agents.jpg)
+Click **Watch the agents work** and the run plays out on one board:
+
+1. **Live scorecard.** The four goals from the brief sit at the top: retention above 100%, no increase above 15%, $0 revenue at risk and every contract honored. Each time an agent tests a pricing model, the scorecard updates. The first draft meets 1 of 4 goals. The final model meets all 4.
+2. **Agent cards.** Each agent says in plain words what it is doing, then shows its result.
+3. **The recommendation.** The five levers fill in as agents finish, ending with the recommendation to the pricing committee and links to the memo, the simulator and the customer objections.
+
+![Agent board with live scorecard](docs/agents.jpg)
+
+![The recommendation](docs/recommendation.jpg)
 
 Eight agents work in four phases. Agents in the same phase run at the same time.
 
