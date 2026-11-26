@@ -117,7 +117,7 @@ export default function Lab() {
           <div className="nav-left">
             <div className="nav-brand">
               <span className="nav-mark" aria-hidden />
-              Pricing Lab
+              <span className="nav-name">Pricing Strategy Agents</span>
             </div>
             <div className="view-tabs" role="tablist" aria-label="Page">
               {(
@@ -229,7 +229,7 @@ export default function Lab() {
 
       <SourcesList />
       <footer className="footer">
-        <div className="container">Pricing Lab · a case study in B2B monetization with agents and skills.</div>
+        <div className="container">Pricing Strategy Agents · a case study in B2B monetization with agents and skills.</div>
       </footer>
     </>
   );
