@@ -60,7 +60,7 @@ export function SectionHead({ num, kicker, title, lede }: { num: string; kicker:
   );
 }
 
-export function Hero({ n }: { n: Nums }) {
+export function Hero({ n, onWatch }: { n: Nums; onWatch?: () => void }) {
   return (
     <header className="hero">
       <div className="container">
@@ -95,7 +95,7 @@ export function Hero({ n }: { n: Nums }) {
           </div>
         </div>
         <div className="hero-cta">
-          <a className="btn btn-gold" href="#agents">
+          <a className="btn btn-gold" href="#agents" onClick={onWatch}>
             Watch the agents work
           </a>
           <a className="btn btn-ghost-dark" href="#why-now">

@@ -19,13 +19,14 @@ import { SourcesList } from "./Sources";
 import UseCases from "./UseCases";
 import Simulator from "./Simulator";
 import { Memo, RedTeam, Research, Rollout } from "./Results";
+import type { ResultTab } from "./RunOutcome";
 
 const DEFAULT_GOAL =
   "Stop losing revenue as seat counts fall. No customer pays more than 15% extra at their next renewal, and every contract is honored.";
 
 export type TimedEvent = RunEvent & { at: number };
 
-type Tab = "simulator" | "research" | "redteam" | "rollout" | "memo";
+type Tab = ResultTab;
 
 export default function Lab() {
   const n = useCaseNumbers();
@@ -152,7 +153,7 @@ export default function Lab() {
         <UseCases />
       ) : (
         <>
-      <Hero n={n} />
+      <Hero n={n} onWatch={() => !running && run()} />
       <WhyNow />
       <Problem n={n} />
       <Opportunity n={n} />
@@ -177,6 +178,10 @@ export default function Lab() {
             setGoal={setGoal}
             onRun={() => run()}
             onStop={() => abortRef.current?.abort()}
+            onOpen={(t) => {
+              setTab(t);
+              document.getElementById("results")?.scrollIntoView({ behavior: "smooth" });
+            }}
           />
         </div>
       </section>
